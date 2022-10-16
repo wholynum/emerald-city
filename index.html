@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+		/>
+		<link rel="stylesheet" href="styles/main.css" />
+		<title>Emerald city</title>
+	</head>
+	<body>
+		<div class="container">
+			<main class="main">
+				<div class="main__item">
+					<h1 class="main__title">Изумрудный город</h1>
+					<p class="main__text">
+						Самый востребованный торговый центр в самом студенческом городе, в
+						Томске
+					</p>
+					<a href="#btnCalc" class="link">Сколько там людей?</a>
+				</div>
+				<div class="main__images">
+					<svg width="352" height="536">
+						<pattern id="pattern" width="100%" height="100%">
+							<image
+								xlink:href="images/tc1.jpg"
+								width="352"
+								height="536"
+							></image>
+						</pattern>
+						<path
+							d="M0 0.204529H182.212C275.548 0.204529 351.212 75.8684 351.212 169.205V537H176C78.7979 537 0 458.202 0 361V0.204529Z"
+							fill="url(#pattern)"
+						/>
+					</svg>
+					<svg width="233" height="299">
+						<pattern id="patternMin" width="100%" height="100%">
+							<image
+								xlink:href="images/in1.jpg"
+								width="233"
+								height="299"
+							></image>
+						</pattern>
+						<path
+							d="M0 0H112.227C179.053 0 233.227 54.1735 233.227 121V319H0V0Z"
+							fill="url(#patternMin)"
+						/>
+					</svg>
+					<div class="stroke">
+						<!-- сам рисовал, не судите строго -->
+						<svg width="352" height="538">
+							<pattern width="100%" height="100%"></pattern>
+							<path
+								d="M0 0.204529H182.212C275.548 0.204529 351.212 75.8684 351.212 169.205V537H176C78.7979 537 0 458.202 0 361V0.204529Z"
+								fill="none"
+								stroke="white"
+								stroke-width="3"
+							/>
+						</svg>
+					</div>
+				</div>
+			</main>
+			<section class="photos">
+				<h2 class="title-h2">Выглядит красиво</h2>
+				<div class="grid">
+					<div class="grid__item">
+						<img src="images/photos/ec1.jpg" alt="ФотоТЦ" />
+					</div>
+					<div class="grid__item">
+						<img src="images/photos/ec2.jpg" alt="ФотоТЦ" />
+					</div>
+					<div class="grid__item">
+						<img src="images/photos/ec3.jpg" alt="ФотоТЦ" />
+					</div>
+					<div class="grid__item">
+						<img src="images/photos/ec4.jpg" alt="ФотоТЦ" />
+					</div>
+				</div>
+			</section>
+			<div class="calc">
+				<div class="calc__title">
+					<svg class="circle" width="200" height="200" viewBox="0 0 200 200">
+						<path
+							id="circleShape"
+							class="circle__shape"
+							d="M 20, 100 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"
+							fill="none"
+						></path>
+						<path
+							class="circle__arrow"
+							d="M 75 100 L 125 100 L 110 85 M 125 100 L 110 115"
+							fill="none"
+							stroke="#ffffff"
+							stroke-width="2"
+						></path>
+						<text class="circle__text">
+							<textPath href="#circleShape" fill="#ffffff">
+								Рассчитать количество человек
+							</textPath>
+						</text>
+					</svg>
+				</div>
+				<div class="calc__body">
+					<form class="form">
+						<p class="form__text">Выберите день недели:</p>
+						<select id="dayCalc" class="form__select">
+							<option value="0" selected disabled>Выбрать</option>
+							<option value="1">Понедельник</option>
+							<option value="2">Вторник</option>
+							<option value="3">Среда</option>
+							<option value="4">Четверг</option>
+							<option value="5">Пятница</option>
+							<option value="6">Суббота</option>
+							<option value="7">Воскресенье</option>
+						</select>
+						<p class="form__text">Укажите час (от 10 до 23):</p>
+						<input
+							id="timeCalc"
+							type="number"
+							class="form__input"
+							value="12"
+							min="10"
+							max="23"
+						/>
+
+						<button id="btnCalc" type="button" class="link">рассчитать</button>
+					</form>
+					<div id="infoCalc" class="total" style="display: none">
+						<p class="total__count"><span id="countCalc"></span> человек</p>
+						<p class="total__info">
+							Оставьте отзыв тут
+							<a class="total__email" href="mailto:wholynum@ya.ru"
+								>wholynum@ya.ru</a
+							>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="scripts/script.js"></script>
+	</body>
+</html>
